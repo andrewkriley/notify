@@ -5,9 +5,9 @@ import clickatelsms
 
 message = "hello world"
 
-def main(message):
+def notify(message):
   clickatelsms.sendSMS(message)
   #cisco-spark(message)
   #gmail-sendmail(message)
 
-main(message)
+notify(message)
