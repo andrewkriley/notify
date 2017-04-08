@@ -7,11 +7,10 @@ ciscoSparkToken = ""
 ciscoSparkRoomId = ""
 
 #Click-a-Tell parameters
-clickatellUser = 'ozrileysaccounts'
-clickatellPassword = 'DOSIPTGSPGMeKD'
-clickatellAPI = '3567677'
-smsRecipient = '+61402894793'
-smsInputMessage = 'andrew home'
+clickatellUser = ''
+clickatellPassword = ''
+clickatellAPI = ''
+smsRecipient = ''
 
 #GMAIL
 gmailUser = ""
