@@ -6,8 +6,7 @@ import config
 
 ACCESS_TOKEN = config.ciscoSparkToken #put your access token between the quotes.
 ROOM_NAME    = config.ciscoSparkRoomName #put the name of a room to which you belong between the quotes.
-#message      = "hello world2" #put your message between the quotes.
-
+#message = "test from this file"
 
 def setHeaders():
 	accessToken_hdr = 'Bearer ' + ACCESS_TOKEN
@@ -28,11 +27,6 @@ def findRoom(roomList,name):
 			break
 	return roomId
 
-def getRoomMessages(theHeader,roomID):
-	uri = 'https://api.ciscospark.com/v1/messages?roomId=' + roomID
-	resp = requests.get(uri, headers=theHeader)
-	return resp.json()
-
 def addMessageToRoom(theHeader,roomID,message):
 	uri = "https://api.ciscospark.com/v1/messages"
 	payload= {"roomId":roomID,"text":message}
@@ -42,19 +36,11 @@ def addMessageToRoom(theHeader,roomID,message):
 def sendSpark(message):
     header=setHeaders()
     rooms=getRooms(header)
-    #print("Rooms:")
-    #print (json.dumps(rooms, indent=4, separators=(',', ': ')))
     roomID=findRoom(rooms,ROOM_NAME)
     if roomID != 0:
-    	msgList=getRoomMessages(header,roomID)
-    	#print()
-    	#print("Messages in " + ROOM_NAME)
-    	#print (json.dumps(msgList, indent=4, separators=(',', ': ')))
     	resp=addMessageToRoom(header,roomID,message)
-    	#print(resp)
-    	msgList=getRoomMessages(header,roomID)
-    	#print("Messages in " + ROOM_NAME)
-    	#print (json.dumps(msgList, indent=4, separators=(',', ': ')))
+        print ROOM_NAME + " " + roomID
+        print message
     else:
     	print("Specified room was not found!")
 
