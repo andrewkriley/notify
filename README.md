@@ -10,4 +10,5 @@ where message is your string
 call using
 
 message = "hello world this message will be send via SMS Spark and GMAIL"
+
 notify.notify(message)
