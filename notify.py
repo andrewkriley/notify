@@ -1,7 +1,7 @@
 #/usr/bin/python
 import ciscospark
 import clickatelsms
-#import gmail-sendmail
+import gmailsendmail
 
 
 #How to use
@@ -14,4 +14,5 @@ def notify(message):
   clickatelsms.sendSMS(message)
   print "Sending Message to Cisco Spark"
   ciscospark.sendSpark(message)
-  #gmail-sendmail(message)
+  print "Sending Message via Gmail"
+  gmailsendmail.sendGmail(message)
