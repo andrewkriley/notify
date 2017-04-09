@@ -4,26 +4,10 @@ A notify engine that takes a message and sends to Clickatel SMS, Cisco Spark and
 rename config.py.sample to config.py
 change the following parameters
 
-#Cisco Spark parameters
-
-ciscoSparkToken = ""
-
-ciscoSparkRoomId = ""
-
-#Click-a-Tell parameters
-clickatellUser = ""
-
-clickatellPassword = ""
-
-clickatellAPI = ""
-
-smsRecipient = ""
-
-#GMAIL
-
-gmailUser = ""
-
-gmailPass = ""
-
 Then import notify into your own function by calling notify(message)
 where message is your string
+
+call using
+
+message = "hello world this message will be send via SMS Spark and GMAIL"
+notify.notify(message)
